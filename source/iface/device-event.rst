@@ -3,10 +3,10 @@
   SPDX-License-Identifier: CC-BY-4.0
 
 .. rst-class:: api-class
-	       
-==================
-sycl::device_event
-==================
+
+======================
+``sycl::device_event``
+======================
 
 ::
 
@@ -14,10 +14,9 @@ sycl::device_event
 
 .. seealso:: |SYCL_SPEC_DEVICE_EVENT|
 
-wait
-====
+``wait``
+========
 
 ::
 
    void wait();
-

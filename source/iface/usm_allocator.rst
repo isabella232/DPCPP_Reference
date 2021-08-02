@@ -6,9 +6,9 @@
 
 .. rst-class:: api-class
 
-===================
-sycl::usm_allocator
-===================
+=======================
+``sycl::usm_allocator``
+=======================
 
 |2020|
 
@@ -25,12 +25,12 @@ declaring standard library containers (e.g. vector).
 
 .. rubric:: Template parameters
 
-=============  ===	    
-T              Type of allocated element
-AllocKind      Type of allocation, see o
-Alignment      Alignment of the allocation
-=============  ===	    
-	    
+=============  ===
+``T``          Type of allocated element
+``AllocKind``  Type of allocation, see :ref:`usm-alloc`
+``Alignment``  Alignment of the allocation
+=============  ===
+
 .. rubric:: Example
 
 .. literalinclude:: /examples/std-vector.cpp
@@ -39,11 +39,11 @@ Alignment      Alignment of the allocation
 
 .. rubric:: Member types
 
-=============  ===	    
-value_type
-=============  ===	    
+==============  ===
+``value_type``
+==============  ===
 
-.. seealso:: |SYCL_SPEC_USM_ALLOCATOR|
+.. seealso:: `SYCL Specification <https://www.khronos.org/registry/SYCL/specs/sycl-2020/html/sycl-2020.html#_c_allocator_interface>`__
 
 (constructors)
 ==============
@@ -56,8 +56,8 @@ value_type
   template <class U>
   usm_allocator(sycl::usm_allocator<U, AllocKind, Alignment> const &) noexcept;
 
-allocate
-========
+``allocate``
+============
 
 ::
 
@@ -65,17 +65,17 @@ allocate
 
 Allocates memory
 
-deallocate
-==========
+``deallocate``
+==============
 
 ::
-   
+
   void deallocate(T *Ptr, size_t size);
 
-Deallocates memory  
+Deallocates memory
 
-construct
-=========
+``construct``
+=============
 
 ::
 
@@ -90,13 +90,13 @@ construct
       class U, class... ArgTs>
   void construct(U *Ptr, ArgTs &&... Args);
 
-Constructs an object on memory pointed by Ptr.
+Constructs an object on memory pointed by ``Ptr``.
 
-destroy
-=======
+``destroy``
+===========
 
 ::
-   
+
   template <
       sycl::usm::alloc AllocT = AllocKind,
       typename std::enable_if<AllocT != sycl::usm::alloc::device, int>::type = 0>

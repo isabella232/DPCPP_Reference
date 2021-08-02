@@ -3,28 +3,27 @@
   SPDX-License-Identifier: CC-BY-4.0
 
 .. rst-class:: api-class
-	       
+
 .. _range:
 
-===========
-sycl::range
-===========
+===============
+``sycl::range``
+===============
 
 ::
-   
+
    template <int dimensions = 1>
    class range;
 
 The range is an abstraction that describes the number of elements in
 each dimension of buffers and index spaces. It can contain 1, 2, or 3
-numbers, dependending on the dimensionality of the object it
-describes.
+numbers, depending on the dimensionality of the object it describes.
 
 
 .. rubric:: Template parameters
 
 ================  ===
-dimensions        Number of dimensions
+``dimensions``    Number of dimensions
 ================  ===
 
 .. seealso:: |SYCL_SPEC_RANGE|
@@ -33,35 +32,35 @@ dimensions        Number of dimensions
 ==============
 
 ::
-   
+
   range(size_t dim0);
   range(size_t dim0, size_t dim1);
   range(size_t dim0, size_t dim1, size_t dim2);
 
-Constructs a 1, 2, or 3 dimensional range.  
+Constructs a 1, 2, or 3 dimensional range.
 
 
-get
-===
+``get``
+=======
 
 ::
-   
+
   size_t get(int dimension) const;
 
 Returns the range of a single dimension.
 
-operator[]
-==========
+``operator[]``
+==============
 
 ::
-   
+
   size_t &operator[](int dimension);
   size_t operator[](int dimension) const;
 
 Returns the range of a single dimension.
 
-size
-====
+``size``
+========
 
 ::
 
@@ -78,7 +77,7 @@ Arithmetic Operators
 .. parsed-literal::
 
   *OP is: +, -, \*, /, %, <<, >>, &, \|, ^, &&, \|\|, <, >, <=, >=*
-  
+
   friend range operatorOP(const range &lhs, const range &rhs)
   friend range operatorOP(const range &lhs, const size_t &rhs)
   friend range operatorOP(const size_t &lhs, const range &rhs)
@@ -88,4 +87,4 @@ Arithmetic Operators
   friend range & operatorOP(const range &lhs, const range &rhs)
   friend range & operatorOP(const range &lhs, const size_t &rhs)
 
-Arithmetical and relational operations on ranges.  
+Arithmetical and relational operations on ranges.

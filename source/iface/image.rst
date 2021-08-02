@@ -9,13 +9,13 @@ Images
 ******
 
 .. rst-class:: api-class
-	       
-===========
-sycl::image
-===========
+
+===============
+``sycl::image``
+===============
 
 ::
-   
+
    template <int dimensions = 1,
              typename AllocatorT = sycl::image_allocator>
    class image;
@@ -23,8 +23,8 @@ sycl::image
 .. rubric:: Template parameters
 
 ========================  ==========
-dimensions
-AllocatorT
+``dimensions``
+``AllocatorT``
 ========================  ==========
 
 .. seealso:: |SYCL_SPEC_IMAGE|
@@ -35,7 +35,7 @@ AllocatorT
 ==============
 
 .. parsed-literal::
-   
+
   image(sycl::image_channel_order order, sycl::image_channel_type type,
         const sycl::range<dimensions> &range, const sycl::property_list &propList = {});
   image(sycl::image_channel_order order, sycl::image_channel_type type,
@@ -64,17 +64,17 @@ AllocatorT
 
   *Available only when:
    dimensions > 1*
-	      
+
   image(sycl::image_channel_order order, sycl::image_channel_type type,
         const sycl::range<dimensions> &range, const sycl::range<dimensions - 1> &pitch,
         const sycl::property_list &propList = {});
   image(sycl::image_channel_order order, sycl::image_channel_type type,
         const sycl::range<dimensions> &range, const sycl::range<dimensions - 1> &pitch,
         AllocatorT allocator, const sycl::property_list &propList = {});
-  image(void \*hostPointer, sycl::image_channel_order order,     
+  image(void \*hostPointer, sycl::image_channel_order order,
         sycl::image_channel_type type, const sycl::range<dimensions> &range,
-        sycl::range<dimensions - 1> &pitch, const sycl::property_list &propList = {});   
-  image(void \*hostPointer, sycl::image_channel_order order,     
+        sycl::range<dimensions - 1> &pitch, const sycl::property_list &propList = {});
+  image(void \*hostPointer, sycl::image_channel_order order,
         sycl::image_channel_type type, const sycl::range<dimensions> &range,
         sycl::range<dimensions - 1> &pitch, AllocatorT allocator,
         const sycl::property_list &propList = {});
@@ -89,58 +89,58 @@ AllocatorT
 
 .. rubric:: Parameters
 
-================  ===
-order
-type
-range
-propList          See `Image properties`_
-allocator
-pitch
-hostPointer
-syclContext
-clMemObject
-availableEvent
-================  ===
+==================  ===
+``order``
+``type``
+``range``
+``propList``        See `Image properties`_
+``allocator``
+``pitch``
+``hostPointer``
+``syclContext``
+``clMemObject``
+``availableEvent``
+==================  ===
 
-get_range
-=========
+``get_range``
+=============
 
 ::
-   
+
   sycl::range<dimensions> get_range() const;
 
-get_pitch
-=========
+``get_pitch``
+=============
 
 ::
-   
+
   sycl::range<dimensions-1> get_pitch() const;
 
 Available only when dimensions > 1
 
-get_count
-=========
+``get_count``
+=============
 
 ::
 
   size_t get_count() const;
 
-get_size
-========
+``get_size``
+============
 
 ::
 
   size_t get_size() const;
 
-get_allocator
-=============
+``get_allocator``
+=================
 
 ::
 
   AllocatorT get_allocator() const;
 
-get_access
-==========
+``get_access``
+==============
 
 ::
 
@@ -154,19 +154,19 @@ get_access
 .. rubric:: Template parameters
 
 ===================  ===
-dataT
-accessMode
+``dataT``
+``accessMode``
 ===================  ===
 
 .. rubric:: Parameters
 
-===================  ===
-commandGroupHandler
-===================  ===
+=======================  ===
+``commandGroupHandler``
+=======================  ===
 
-	    
-set_final_data
-==============
+
+``set_final_data``
+==================
 
 ::
 
@@ -178,18 +178,18 @@ Description
 .. rubric:: Template parameters
 
 ================  ===
-Destination
+``Destination``
 ================  ===
 
 .. rubric:: Parameters
 
 ================  ===
-finalData
+``finalData``
 ================  ===
 
 
-set_write_back
-==============
+``set_write_back``
+==================
 
 ::
 
@@ -206,9 +206,9 @@ flag
 ==================
 
 .. rst-class:: api-class
-	       
-sycl::property::image::use_host_ptr
-===================================
+
+``sycl::property::image::use_host_ptr``
+=======================================
 
 ::
 
@@ -228,9 +228,9 @@ Description
 Description
 
 .. rst-class:: api-class
-	       
-sycl::property::image::use_mutex
-================================
+
+``sycl::property::image::use_mutex``
+====================================
 
 ::
 
@@ -239,7 +239,7 @@ sycl::property::image::use_mutex
 Description
 
 .. _image-get_mutex_ptr-get_mutex_ptr:
-   
+
 (constructors)
 --------------
 
@@ -249,8 +249,8 @@ Description
 
 Description
 
-get_mutex_ptr
--------------
+``get_mutex_ptr``
+-----------------
 
 ::
 
@@ -259,8 +259,8 @@ get_mutex_ptr
 
 Description
 
-sycl::property::image::context_bound
-====================================
+``sycl::property::image::context_bound``
+========================================
 
 
 ::
@@ -288,8 +288,8 @@ Description
 Description
 
 
-get_context
------------
+``get_context``
+---------------
 
 ::
 
@@ -298,12 +298,12 @@ get_context
 
 Description
 
-=========================
-sycl::image_channel_order
-=========================
+=============================
+``sycl::image_channel_order``
+=============================
 
 ::
-   
+
    enum class image_channel_order : unsigned int {
      a,
      r,
@@ -321,12 +321,12 @@ sycl::image_channel_order
      abgr
    }
 
-========================
-sycl::image_channel_type
-========================
+============================
+``sycl::image_channel_type``
+============================
 
 ::
-   
+
    enum class image_channel_type : unsigned int {
      snorm_int8,
      snorm_int16,

@@ -10,12 +10,12 @@ Platforms
 
 .. rst-class:: api-class
 
-==============
-sycl::platform
-==============
+==================
+``sycl::platform``
+==================
 
 ::
-   
+
    class platform;
 
 Abstraction for SYCL platform.
@@ -23,28 +23,13 @@ Abstraction for SYCL platform.
 A platform contains 1 or more SYCL devices, or a host device.
 
 .. seealso:: |SYCL_SPEC_PLATFORM|
-   
-.. _platform-example:
-
-.. rubric:: Example
-
-Enumerate the platforms and the devices they contain.
-   
-.. literalinclude:: /examples/get-platforms.cpp
-   :lines: 5-
-   :linenos:
-
-Output:
-
-.. literalinclude:: /examples/get-platforms.out
-   :lines: 5-
 
 
 (constructors)
 ==============
 
 ::
-   
+
   platform();
   explicit platform(cl_platform_id platformID);
   explicit platform(const sycl::device_selector &deviceSelector);
@@ -58,11 +43,11 @@ get_. When passed a :ref:`device_selector`, a platform is constructed
 that includes the preferred device.
 
 
-get
-===
+``get``
+=======
 
 ::
-   
+
   cl_platform_id get() const;
 
 Returns the OpenCL device associated with the platform.
@@ -72,11 +57,11 @@ Only call this when the platform constructor was passed a
 
 .. _platform-get_devices:
 
-get_devices
-===========
+``get_devices``
+===============
 
 ::
-   
+
   sycl::vector_class<sycl::device> get_devices(
      sycl::info::device_type = sycl::info::device_type::all) const;
 
@@ -90,11 +75,11 @@ See `platform-example`_.
 
 .. _platform-get_info:
 
-get_info
-========
+``get_info``
+============
 
 ::
-   
+
   template< sycl::info::platform param >
   typename sycl::info::param_traits<sycl::info::platform, param>::return_type get_info() const;
 
@@ -108,29 +93,29 @@ See `platform-example`_.
 
 .. _platform-has_extension:
 
-has_extension
-=============
+``has_extension``
+=================
 
 ::
-   
+
   bool has_extension(const sycl::string_class &extension) const;
 
 Returns True if the platform has ``extension``.
-  
-is_host
-=======
+
+``is_host``
+===========
 
 ::
-   
+
   bool is_host() const;
 
 Returns True if the platform contains a SYCL host device
 
-get_platforms
-=============
+``get_platforms``
+=================
 
 ::
-   
+
   static sycl::vector_class<platform> get_platforms();
 
 Returns a vector_class containing SYCL platforms bound to the system.
@@ -139,9 +124,9 @@ Returns a vector_class containing SYCL platforms bound to the system.
 
 See `platform-example`_.
 
-====================
-sycl::info::platform
-====================
+========================
+``sycl::info::platform``
+========================
 
 ::
 
@@ -156,12 +141,42 @@ sycl::info::platform
 Used as a template parameter for get_info_ to determine
 the type of information.
 
-===========  ==========================  ===
-Descriptor   Return type                 Description
-===========  ==========================  ===
-profile      string_class                OpenCL profile
-version      string_class                OpenCL software driver version
-name         string_class                Device name of the platform
-vendor       string_class                Vendor name
-extensions   vector_class<string_class>  Extension names supported by the platform
-===========  ==========================  ===
+.. list-table::
+   :header-rows: 1
+
+   * - Descriptor
+     - Return type
+     - Description
+   * - profile
+     - string_class
+     - OpenCL profile
+   * - version
+     - string_class
+     - OpenCL software driver version
+   * - name
+     - string_class
+     - Device name of the platform
+   * - vendor
+     - string_class
+     - Vendor name
+   * - extensions
+     - vector_class<string_class>
+     - Extension names supported by the platform
+
+
+.. _platform-example:
+
+=======
+Example
+=======
+
+Enumerate the platforms and the devices they contain.
+
+.. literalinclude:: /examples/get-platforms.cpp
+   :lines: 5-
+   :linenos:
+
+Output:
+
+.. literalinclude:: /examples/get-platforms.out
+   :lines: 5-

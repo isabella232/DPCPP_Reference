@@ -37,6 +37,16 @@ an efficient, performant programming model that eliminates the need
 for developers to maintain separate code bases, languages, tools, and
 workflows for each architecture.
 
+The reference supplements the |SYCL_SPEC| and has the same overall
+structure.
+
+The document is a work-in-progress, and we are publishing now with
+the hope that the community will make it better. We want to have a
+document that is up-to-date and accurate, with many usage examples. If
+you see something wrong, something that could be better, or want to
+contribute examples or descriptions, feel free to use the buttons at
+the top right to file an issue on GitHub or suggest an edit.
+
 
 .. _oneapi-programming-model-overview:
 
@@ -66,7 +76,7 @@ performance on all supported architectures without end user tuning.
 
 As shown in the figure above, applications that take advantage of the
 oneAPI programming model can execute on multiple target hardware
-platforms ranging from CPU to FPGA. 
+platforms ranging from CPU to FPGA.
 
 
 Data Parallel C++ (DPC++)
@@ -87,7 +97,7 @@ In this guide, it is safe to assume that anything that mentions SYCL is also app
 Structure of This Document
 ==========================
 
-This document consists of the following sections: 
+This document consists of the following sections:
 
 * :ref:`oneapi-programming-model` describes the high-level concepts
   for the DPC++ programming model and the execution model that it

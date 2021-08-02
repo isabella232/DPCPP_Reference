@@ -3,18 +3,18 @@
   SPDX-License-Identifier: CC-BY-4.0
 
 .. rst-class:: api-class
-	       
+
 .. _nd_item:
 
-=============
-sycl::nd_item
-=============
+=================
+``sycl::nd_item``
+=================
 
 ::
 
    template <int dimensions = 1>
    class nd_item;
-   
+
 The ``nd_item`` describes the location of a point in an
 :ref:`nd_range`.
 
@@ -25,138 +25,138 @@ contains the :ref:`nd_range` defining the index space.
 
 .. seealso:: |SYCL_SPEC_ND_ITEM|
 
-get_global_id
-=============
+``get_global_id``
+=================
 
 ::
-   
+
   sycl::id<dimensions> get_global_id() const;
   size_t get_global_id(int dimension) const;
 
 Returns global :ref:`id` for the requested dimensions.
 
-get_global_linear_id
-====================
+``get_global_linear_id``
+========================
 
 ::
-   
+
   size_t get_global_linear_id() const;
 
 Returns global id mapped to a linear space.
 
-get_local_id
-============
+``get_local_id``
+================
 
 ::
-   
+
   sycl::id<dimensions> get_local_id() const;
   size_t get_local_id(int dimension) const;
 
 Returns id for the point in the work group.
 
-get_local_linear_id
-===================
+``get_local_linear_id``
+=======================
 
 ::
-   
+
   size_t get_local_linear_id() const;
 
 Returns linear id for point in the work group.
 
-get_group
-=========
+``get_group``
+=============
 
 ::
-   
+
   sycl::group<dimensions> get_group() const;
   size_t get_group(int dimension) const;
 
 Returns :ref:`group` associated with the item.
 
-get_group_linear_id
-===================
+``get_group_linear_id``
+=======================
 
 ::
-   
+
   size_t get_group_linear_id() const;
 
 Returns linear id for group in workspace.
 
-get_group_range
-===============
+``get_group_range``
+===================
 
 ::
-   
+
   sycl::range<dimensions> get_group_range() const;
   size_t get_group_range(int dimension) const;
 
 Returns the number of groups in every dimension.
 
-get_global_range
-================
+``get_global_range``
+====================
 
 ::
-   
+
   sycl::range<dimensions> get_global_range() const;
   size_t get_global_range(int dimension) const;
 
 Returns the :ref:`range` of the index space.
 
-get_local_range
-===============
+``get_local_range``
+===================
 
 ::
-   
+
   sycl::range<dimensions> get_local_range() const;
   size_t get_local_range(int dimension) const;
 
 Returns the position of the work item in the work group.
 
-get_offset
-==========
+``get_offset``
+==============
 
 ::
-   
+
   sycl::id<dimensions> get_offset() const;
 
 Returns the offset provided to the :ref:`handler-parallel_for`.
 
-get_nd_range
-============
+``get_nd_range``
+================
 
 ::
-   
+
   sycl::nd_range<dimensions> get_nd_range() const;
 
 Returns the :ref:`nd_range` provided to the :ref:`handler-parallel_for`.
 
-barrier
-=======
+``barrier``
+===========
 
 ::
-   
+
   void barrier(sycl::access::fence_space accessSpace =
     sycl::access::fence_space::global_and_local) const;
 
 Executes a work group barrier.
 
 
-mem_fence
-=========
+``mem_fence``
+=============
 
 ::
-   
+
   template <sycl::access::mode accessMode = sycl::access::mode::read_write>
   void mem_fence(sycl::access::fence_space accessSpace =
     sycl::access::fence_space::global_and_local) const;
 
 Executes a work group memory fence.
 
-async_work_group_copy
-=====================
+``async_work_group_copy``
+=========================
 
 ::
-   
+
   template <typename dataT>
   device_event async_work_group_copy(sycl::local_ptr<dataT> dest,
     sycl::global_ptr<dataT> src, size_t numElements) const;
@@ -174,11 +174,11 @@ Copies elements from a source local to the destination asynchronously.
 
 Returns an event that indicates when the operation has completed.
 
-wait_for
-========
+``wait_for``
+============
 
 ::
-   
+
   template <typename... eventTN>
   void wait_for(eventTN... events) const;
 

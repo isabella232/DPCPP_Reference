@@ -1,8 +1,8 @@
 # Copyright 2020 The Khronos Group Inc.
 # SPDX-License-Identifier: Apache-2.0
 
+pre-commit
 reuse
 Sphinx
-sphinx-book-theme
+git+https://github.com/executablebooks/sphinx-book-theme.git
 sphinxcontrib-spelling
-

@@ -6,36 +6,11 @@
 Programs
 ********
 
-===================
-sycl::info::program
-===================
-
-::
-
-   enum class program: int {
-       context,
-       devices,
-       reference_count
-   };
-
-
-===================
-sycl::program_state
-===================
-
-::
-
-   enum class program_state {
-       none,
-       compiled,
-       linked
-   };
-
 .. rst-class:: api-class
-	       
-=============
-sycl::program
-=============
+
+=================
+``sycl::program``
+=================
 
 ::
 
@@ -45,7 +20,7 @@ sycl::program
 ==============
 
 ::
-   
+
   explicit program(const context &sycl::context,
                    const sycl::property_list &propList = {});
   program(const context &sycl::context, sycl::vector_class<sycl::device> deviceList,
@@ -56,46 +31,46 @@ sycl::program
           const sycl::property_list &propList = {});
   program(const sycl::context &context, cl_program clProgram);
 
-get
-===
+``get``
+=======
 
 ::
 
    cl_program get() const;
 
 
-is_host
-=======
+``is_host``
+===========
 
 ::
 
    bool is_host() const;
 
-compile_with_kernel_type
-========================
+``compile_with_kernel_type``
+============================
 
 ::
 
    template <typename kernelT>
    void build_with_kernel_type(sycl::string_class buildOptions = "");
 
-build_with_source
-=================
+``build_with_source``
+=====================
 
 ::
 
    void build_with_source(sycl::string_class kernelSource,
                           sycl::string_class buildOptions = "");
 
-link
-====
+``link``
+========
 
 ::
 
    void link(sycl::string_class linkOptions = "");
 
-has_kernel
-==========
+``has_kernel``
+==============
 
 ::
 
@@ -104,8 +79,8 @@ has_kernel
 
    bool has_kernel(sycl::string_class kernelName) const;
 
-get_kernel
-==========
+``get_kernel``
+==============
 
 ::
 
@@ -115,8 +90,8 @@ get_kernel
   sycl::kernel get_kernel(sycl::string_class kernelName) const;
 
 
-get_info
-========
+``get_info``
+============
 
 ::
 
@@ -124,62 +99,81 @@ get_info
   typename info::param_traits<sycl::info::program, param>::return_type
   get_info() const;
 
-get_binaries
-============
+``get_binaries``
+================
 
 ::
 
   sycl::vector_class<sycl::vector_class<char>> get_binaries() const;
 
-get_context
-===========
+``get_context``
+===============
 
 ::
 
    sycl::context get_context() const;
 
 
-get_devices
-===========
+``get_devices``
+===============
 
 ::
 
    sycl::vector_class<sycl::device> get_devices() const;
 
 
-get_compile_options
-===================
+``get_compile_options``
+=======================
 
 ::
 
    sycl::string_class get_compile_options() const;
 
 
-get_link_options
-================
+``get_link_options``
+====================
 
 ::
 
    sycl::string_class get_link_options() const;
 
-get_build_options
-=================
+``get_build_options``
+=====================
 
 ::
 
    sycl::string_class get_build_options() const;
 
 
-get_state
-=========
- 
+``get_state``
+=============
+
 ::
 
    sycl::program_state get_state() const;
 
 
+=======================
+``sycl::info::program``
+=======================
+
+::
+
+   enum class program: int {
+       context,
+       devices,
+       reference_count
+   };
 
 
+=======================
+``sycl::program_state``
+=======================
 
+::
 
-
+   enum class program_state {
+       none,
+       compiled,
+       linked
+   };

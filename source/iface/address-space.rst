@@ -8,12 +8,12 @@
  Multipointer
 **************
 
-===========================
-sycl::access::address_space
-===========================
+===============================
+``sycl::access::address_space``
+===============================
 
 ::
-   
+
    enum class address_space : int {
        global_space,
        local_space,
@@ -25,10 +25,10 @@ sycl::access::address_space
 .. seealso:: |SYCL_SPEC_ADDRESS_SPACE|
 
 .. rst-class:: api-class
-	       
-===============
-sycl::multi_ptr
-===============
+
+===================
+``sycl::multi_ptr``
+===================
 
 ::
 
@@ -39,32 +39,32 @@ sycl::multi_ptr
 .. rubric:: Template parameters
 
 ===============  ===
-ElementType
-Space
+``ElementType``
+``Space``
 ===============  ===
 
 .. rubric:: Member types
 
-=================  ====
-element_type
-difference_type
-pointer_t
-const_pointer_t
-reference_t
-const_reference_t
-=================  ====
+=====================  ====
+``element_type``
+``difference_type``
+``pointer_t``
+``const_pointer_t``
+``reference_t``
+``const_reference_t``
+=====================  ====
 
 .. rubric:: Nonmember data
 
 =================  ====
-address_space
+``address_space``
 =================  ====
-   
+
 .. seealso:: |SYCL_SPEC_MULTI_PTR|
 
 (constructors)
 ==============
-	    
+
 ::
 
   multi_ptr();
@@ -74,18 +74,18 @@ address_space
   multi_ptr(ElementType*);
   multi_ptr(std::nullptr_t);
 
-operator=
-=========
+``operator=``
+=============
 
 .. parsed-literal::
-   
+
   sycl::multi_ptr &operator=(const multi_ptr&);
   sycl::multi_ptr &operator=(multi_ptr&&);
   sycl::multi_ptr &operator=(pointer_t);
   sycl::multi_ptr &operator=(ElementType*);
   sycl::multi_ptr &operator=(std::nullptr_t);
 
-   
+
   *Available only when:
    Space == global_space*
 
@@ -94,56 +94,56 @@ operator=
 
   *Available only when:
    Space == local_space*
-   
+
   template <int dimensions, access::mode Mode, access::placeholder isPlaceholder>
   sycl::multi_ptr(accessor<ElementType, dimensions, Mode, sycl::access::target::local, isPlaceholder>);
 
-  *Available only when:   
+  *Available only when:
    Space == constant_space*
-   
-  template <int dimensions, access::mode Mode, access::placeholder isPlaceholder> 
+
+  template <int dimensions, access::mode Mode, access::placeholder isPlaceholder>
   sycl::multi_ptr(accessor<ElementType, dimensions, Mode, sycl::access::target::constant_buffer, isPlaceholder>);
 
 
 .. rubric:: Template parameters
 
-===============  ===
-dimensions
-Mode
-isPlaceholder
-===============  ===
+=================  ===
+``dimensions``
+``Mode``
+``isPlaceholder``
+=================  ===
 
 
-operator*
-=========
+``operator*``
+=============
 
 ::
 
      friend ElementType& operator*(const sycl::multi_ptr& mp);
 
-operator->
-==========
+``operator->``
+==============
 
 ::
 
      ElementType* operator->() const;
 
-get
-===
+``get``
+=======
 
 ::
 
   pointer_t get() const;
 
 .. rubric:: Returns
-	    
+
 Returns the underlying OpenCL C pointer
 
 (Implicit conversions)
 ======================
 
 .. parsed-literal::
-   
+
   *Implicit conversion to the underlying pointer type*
 
   operator ElementType*() const;
@@ -155,11 +155,11 @@ Returns the underlying OpenCL C pointer
 
   *Implicit conversion to a multi_ptr<const void>. Only
    available when ElementType is const-qualified*
-   
+
   operator sycl::multi_ptr<const void, Space>() const;
 
   *Implicit conversion to multi_ptr<const ElementType, Space>*
-  
+
   operator sycl::multi_ptr<const ElementType, Space>() const;
 
 
@@ -178,18 +178,18 @@ Returns the underlying OpenCL C pointer
   friend sycl::multi_ptr operator+(const sycl::multi_ptr& lhs, difference_type r);
   friend sycl::multi_ptr operator-(const sycl::multi_ptr& lhs, difference_type r);
 
-prefetch
-========
+``prefetch``
+============
 
 ::
- 
+
  void prefetch(size_t numElements) const;
-  
+
 (Relational operators)
 ======================
 
 ::
-   
+
   friend bool operator==(const sycl::multi_ptr& lhs, const sycl::multi_ptr& rhs);
   friend bool operator!=(const sycl::multi_ptr& lhs, const sycl::multi_ptr& rhs);
   friend bool operator<(const sycl::multi_ptr& lhs, const sycl::multi_ptr& rhs);
@@ -210,6 +210,3 @@ prefetch
   friend bool operator>(std::nullptr_t, const sycl::multi_ptr& rhs);
   friend bool operator<=(std::nullptr_t, const sycl::multi_ptr& rhs);
   friend bool operator>=(std::nullptr_t, const sycl::multi_ptr& rhs);
-
-
-

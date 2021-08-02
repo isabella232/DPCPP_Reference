@@ -1,0 +1,24 @@
+# SPDX-FileCopyrightText: 2020 The Khronos Group Inc.
+#
+# SPDX-License-Identifier: Apache-2.0
+
+name: checks
+
+on: [push, pull_request]
+
+jobs:
+  checks:
+    runs-on: ubuntu-20.04
+    steps:
+    - uses: actions/checkout@v2
+    - uses: actions/setup-python@v2
+    - name: Install dependencies
+      run: |
+        sudo apt install -qq clang-format enchant
+        python -m pip install --quiet --upgrade pip
+        pip install --quiet -r requirements.txt
+    - name: Checks
+      run: |
+        pre-commit run --all
+        # Need to install dpcpp without blowing up time
+        # python doc.py examples

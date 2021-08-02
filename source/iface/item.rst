@@ -3,12 +3,12 @@
   SPDX-License-Identifier: CC-BY-4.0
 
 .. rst-class:: api-class
-	       
+
 .. _item:
 
-==========
-sycl::item
-==========
+==============
+``sycl::item``
+==============
 
 ::
 
@@ -26,73 +26,73 @@ constructor because only the SYCL runtime needs to construct an
 
 .. rubric:: Template parameters
 
-==============  ===
-dimensions      Number of dimensions in index space
-with_offset     True if item has offset
-==============  ===
+===============  ===
+``dimensions``   Number of dimensions in index space
+``with_offset``  True if item has offset
+===============  ===
 
 .. seealso:: |SYCL_SPEC_ITEM|
 
-get_id
-======
+``get_id``
+==========
 
 ::
-   
+
   sycl::id<dimensions> get_id() const;
   size_t get_id(int dimension) const;
 
 
 Returns :ref:`id` associated with ``item``.
 
-get_range
-=========
+``get_range``
+=============
 
 ::
-   
+
   sycl::range<dimensions> get_range() const;
   size_t get_range(int dimension) const;
 
 Returns :ref:`range` associated with ``item``.
 
 
-get_offset
-==========
+``get_offset``
+==============
 
 ::
-   
+
   *Only available when:
    with_offset is true*
-   
+
   sycl::id<dimensions> get_offset() const;
 
 Returns offset associated with ``item``.
 
-get_linear_id
-=============
+``get_linear_id``
+=================
 
 ::
-   
+
   size_t get_linear_id() const;
 
 Returns the linear id, suitable for mapping the ``id`` to a 1
 dimensional array.
 
 
-operator[]
-==========
+``operator[]``
+==============
 
 ::
-   
+
   size_t operator[](int dimension) const;
 
 Returns id for dimension ``dimension``.
 
-   
-operator()
-==========
+
+``operator()``
+==============
 
 ::
-   
+
   operator sycl::item<dimensions, true>() const;
 
 Returns item with offset set to 0.

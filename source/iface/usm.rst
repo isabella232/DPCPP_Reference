@@ -4,9 +4,9 @@
 
 .. _usm-alloc:
 
-================
-sycl::usm::alloc
-================
+====================
+``sycl::usm::alloc``
+====================
 
 |2020|
 
@@ -31,4 +31,4 @@ shared
   SYCL runtime may move data between host and device. Accessible by
   host and device.
 
-.. seealso:: |SYCL_SPEC_USM_ALLOC|
+.. seealso:: `SYCL Specification <https://www.khronos.org/registry/SYCL/specs/sycl-2020/html/sycl-2020.html#_kinds_of_unified_shared_memory>`__

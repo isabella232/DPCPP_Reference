@@ -9,13 +9,13 @@ Exceptions
 **********
 
 .. rst-class:: api-class
-	       
-===============
-sycl::exception
-===============
+
+===================
+``sycl::exception``
+===================
 
 ::
-   
+
    class exception;
 
 .. seealso:: |SYCL_SPEC_EXCEPTION|
@@ -28,18 +28,18 @@ asynchronous operations until :ref:`queue-wait_and_throw` or
 exception as a list to the `sycl::async_handler`_ associated with the
 :ref:`queue`.
 
-   
-what
-====
+
+``what``
+========
 
 ::
-   
+
    const char *what() const;
 
 Returns string that describes the error that triggered the exception.
 
-has_context
-===========
+``has_context``
+===============
 
 ::
 
@@ -48,8 +48,8 @@ has_context
 
 Returns true if error has an associated :ref:`context`.
 
-get_context
-===========
+``get_context``
+===============
 
 ::
 
@@ -58,8 +58,8 @@ get_context
 
 Returns :ref:`context` associated with this error.
 
-get_cl_code
-===========
+``get_cl_code``
+===============
 
 ::
 
@@ -70,31 +70,31 @@ Returns OpenCL error code if the error is an OpenCL error, otherwise
 ``CL_SUCCESS``.
 
 .. rst-class:: api_class
-	       
-====================
-sycl::exception_list
-====================
+
+========================
+``sycl::exception_list``
+========================
 
 ::
 
    class exception_list;
 
-An exContainer for a list of asychronous exceptions that occur in the same
-queue. Re
+A container for a list of asynchronous exceptions that occur in the same
+queue.
 
 .. rubric:: Member types
 
-===============  ===
-value_type
-reference
-const_reference
-size_type
-iterator
-const_iterator
-===============  ===
+===================  ===
+``value_type``
+``reference``
+``const_reference``
+``size_type``
+``iterator``
+``const_iterator``
+===================  ===
 
-size
-====
+``size``
+========
 
 ::
 
@@ -102,8 +102,8 @@ size
 
 Returns number of elements in the list.
 
-begin
-=====
+``begin``
+=========
 
 ::
 
@@ -111,8 +111,8 @@ begin
 
 Returns an iterator to the beginning of the list of exceptions.
 
-end
-===
+``end``
+=======
 
 ::
 
@@ -125,24 +125,24 @@ Returns an iterator to the beginning of the list of exceptions.
 Derived exceptions
 ==================
 
-sycl::runtime_error
-===================
+``sycl::runtime_error``
+=======================
 
 ::
 
    class runtime_error : public exception;
 
-sycl::kernel_error
-==================
+``sycl::kernel_error``
+======================
 
 ::
 
    class kernel_error : public runtime_error;
 
-Error that occured before or while enqueuing the SYCL kernel.
+Error that occurred before or while enqueueing the SYCL kernel.
 
-sycl::accessor_error
-====================
+``sycl::accessor_error``
+========================
 
 ::
 
@@ -150,8 +150,8 @@ sycl::accessor_error
 
 Error regarding :ref:`iface-accessors`.
 
-sycl::nd_range_error
-====================
+``sycl::nd_range_error``
+========================
 
 ::
 
@@ -159,8 +159,8 @@ sycl::nd_range_error
 
 Error regarding the :ref:`nd_range` for a SYCL kernel.
 
-sycl::event_error
-=================
+``sycl::event_error``
+=====================
 
 ::
 
@@ -168,8 +168,8 @@ sycl::event_error
 
 Error regarding an :ref:`event`.
 
-sycl::invalid_parameter_error
-=============================
+``sycl::invalid_parameter_error``
+=================================
 
 ::
 
@@ -178,15 +178,15 @@ sycl::invalid_parameter_error
 Error regarding parameters to a SYCL kernel, including captured
 parameters to a lambda.
 
-sycl::device_error
-==================
+``sycl::device_error``
+======================
 
 ::
 
    class device_error : public exception;
 
-sycl::compile_program_error
-===========================
+``sycl::compile_program_error``
+===============================
 
 ::
 
@@ -194,8 +194,8 @@ sycl::compile_program_error
 
 Error while compiling a SYCL kernel.
 
-sycl::link_program_error
-========================
+``sycl::link_program_error``
+============================
 
 ::
 
@@ -203,8 +203,8 @@ sycl::link_program_error
 
 Error linking a SYCL kernel to a SYCL device.
 
-sycl::invalid_object_error
-==========================
+``sycl::invalid_object_error``
+==============================
 
 ::
 
@@ -212,8 +212,8 @@ sycl::invalid_object_error
 
 Error regarding memory objects used inside a kernel.
 
-sycl::memory_allocation_error
-=============================
+``sycl::memory_allocation_error``
+=================================
 
 ::
 
@@ -221,8 +221,8 @@ sycl::memory_allocation_error
 
 Error regarding memory allocation on the SYCL device.
 
-sycl::platform_error
-====================
+``sycl::platform_error``
+========================
 
 ::
 
@@ -230,8 +230,8 @@ sycl::platform_error
 
 Error triggered by the :ref:`platform`.
 
-sycl::profiling_error
-=====================
+``sycl::profiling_error``
+=========================
 
 ::
 
@@ -239,8 +239,8 @@ sycl::profiling_error
 
 Error triggered while profiling is enabled.
 
-sycl::featured_non_supported
-============================
+``sycl::featured_non_supported``
+================================
 
 ::
 
@@ -250,9 +250,9 @@ Optional feature or extension is not available on the :ref:`device`.
 
 .. _async_handler:
 
-===================
-sycl::async_handler
-===================
+=======================
+``sycl::async_handler``
+=======================
 
 ::
 
@@ -261,7 +261,7 @@ sycl::async_handler
 .. rubric:: Parameters
 
 =============  ===
-e              List of asynchronous exceptions. See `sycl::exception_list`_
+``e``          List of asynchronous exceptions. See `sycl::exception_list`_
 =============  ===
 
 The SYCL runtime delivers asynchronous exceptions by invoking an

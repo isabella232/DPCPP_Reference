@@ -1,0 +1,23 @@
+# SPDX-FileCopyrightText: 2020 The Khronos Group Inc.
+#
+# SPDX-License-Identifier: Apache-2.0
+
+accessor
+accessors
+destructor
+atomics
+dimensionality
+runtime
+runtimes
+subdevices
+allocator
+enqueueing
+Todo
+Deallocates
+Allocators
+enqueued
+deallocated
+Multipointer
+USM
+Namespaces
+namespace

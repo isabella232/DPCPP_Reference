@@ -8,9 +8,9 @@ Samplers
 
 .. seealso:: |SYCL_SPEC_SAMPLER|
 
-=====================
-sycl::addressing_mode
-=====================
+=========================
+``sycl::addressing_mode``
+=========================
 
 ::
 
@@ -23,20 +23,20 @@ sycl::addressing_mode
   };
 
 
-====================
-sycl::filtering_mode
-====================
+========================
+``sycl::filtering_mode``
+========================
 
 ::
-   
+
   enum class filtering_mode: unsigned int {
      nearest,
      linear
   };
 
-===================================
-sycl::coordinate_normalization_mode
-===================================
+=======================================
+``sycl::coordinate_normalization_mode``
+=======================================
 
 ::
 
@@ -46,10 +46,10 @@ sycl::coordinate_normalization_mode
   };
 
 .. rst-class:: api-class
-	       
-=============
-sycl::sampler
-=============
+
+=================
+``sycl::sampler``
+=================
 
 ::
 
@@ -59,31 +59,31 @@ sycl::sampler
 ==============
 
 ::
-   
+
   sampler(sycl::coordinate_normalization_mode normalizationMode,
           sycl::addressing_mode addressingMode, sycl::filtering_mode filteringMode,
           const sycl::property_list &propList = {});
 
   sampler(cl_sampler clSampler, const sycl::context &syclContext);
 
-get_address_mode
-================
+``get_address_mode``
+====================
 
 ::
 
   sycl::addressing_mode get_addressing_mode() const;
 
 
-get_filtering_mode
-==================
+``get_filtering_mode``
+======================
 
 ::
 
    sycl::filtering_mode get_filtering_mode() const;
 
 
-get_coordinate_normalization_mode
-=================================
+``get_coordinate_normalization_mode``
+=====================================
 
 ::
 

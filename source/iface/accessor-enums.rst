@@ -4,9 +4,9 @@
 
 .. _access-mode:
 
-==================
-sycl::access::mode
-==================
+======================
+``sycl::access::mode``
+======================
 
 ::
 
@@ -21,12 +21,12 @@ sycl::access::mode
 
 .. _access-target:
 
-====================
-sycl::access::target
-====================
+========================
+``sycl::access::target``
+========================
 
 ::
-   
+
   enum class target {
     global_buffer = 2014,
     constant_buffer,
@@ -36,6 +36,3 @@ sycl::access::target
     host_image,
     image_array
   };
-
-
-  

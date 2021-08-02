@@ -5,7 +5,7 @@
 ==========================
  DPC++ Language Reference
 ==========================
- 
+
 This document is the source for the `DPC++
 <https://software.intel.com/content/www/us/en/develop/tools/oneapi/data-parallel-c-plus-plus.html>`__
 language reference. Data Parallel C++ (DPC++) is an open,
@@ -28,13 +28,19 @@ Commits to dpcpp branch are built by GitHub Actions and published with
 Prerequisites
 =============
 
-The document is built with `Sphinx
-<https://www.sphinx-doc.org/en/master>`__ and plugins. To install all
-required software on Ubuntu::
+The document is built with _Sphinx plugins. To install all required
+software on Ubuntu::
 
    apt-get update -qq
-   DEBIAN_FRONTEND=noninteractive xargs -a packages.txt apt-get install -qq
+   DEBIAN_FRONTEND=noninteractive xargs -a ubuntu-packages.txt apt-get install -qq
    pip3 install --upgrade --quiet -r requirements.txt
+
+On Windows, install python_ and git_, followed by::
+
+   pip install --upgrade --quiet -r requirements.txt
+
+For development, you must also install `clang-format`_. This is only
+needed for C++ code formatting as part of the git pre-commit hook.
 
 Building
 ========
@@ -45,7 +51,6 @@ To build::
 
 To see the document, open build/html/index.html
 
-  
 Relationship to SYCL Reference
 ==============================
 
@@ -73,7 +78,7 @@ Add license/copyright to a rst file (may require a `patch
   reuse addheader -c "Intel Corporation" -l CC-BY-4.0 path/to/file.rst
 
 Add license/copyright to a code example::
-  
+
   reuse addheader -c "Intel Corporation" -l Apache-2.0 path/to/file.cpp
 
 License

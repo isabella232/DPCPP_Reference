@@ -7,9 +7,9 @@
 **************
 
 
-===================
-sycl::rounding_mode
-===================
+=======================
+``sycl::rounding_mode``
+=======================
 
 ::
 
@@ -21,9 +21,9 @@ sycl::rounding_mode
        rtn
    };
 
-==========
-sycl::elem
-==========
+==============
+``sycl::elem``
+==============
 
 ::
 
@@ -56,10 +56,10 @@ sycl::elem
 
 
 .. rst-class:: api-class
-	       
-=========
-sycl::vec
-=========
+
+=============
+``sycl::vec``
+=============
 
 ::
 
@@ -68,10 +68,10 @@ sycl::vec
 
 .. rubric:: Member types
 
-============  ===
-element_type
-vector_t
-============  ===
+================  ===
+``element_type``
+``vector_t``
+================  ===
 
 (constructors)
 ==============
@@ -95,30 +95,30 @@ Conversion functions
 
   *Available when:
    numElements == 1*
-   
+
   operator dataT() const;
 
 
 
-get_count
-=========
+``get_count``
+=============
 
 ::
-   
+
    size_t get_count() const;
 
-get_size
-========
+``get_size``
+============
 
 ::
-   
+
   size_t get_size() const;
-   
-convert
-=======
+
+``convert``
+===========
 
 ::
-   
+
    template <typename convertT, sycl::rounding_mode roundingMode = sycl::rounding_mode::automatic>
    sycl::vec<convertT, numElements> convert() const;
 
@@ -130,14 +130,14 @@ as
    template <typename asT>
    asT as() const;
 
-swizzle
-=======
+``swizzle``
+===========
 
 ::
 
    template<int... swizzleIndexes>
    __swizzled_vec__ swizzle() const;
-   
+
 swizzle access
 ==============
 
@@ -174,16 +174,16 @@ swizzle access
      __swizzled_vec__ odd() const;
      __swizzled_vec__ even() const;
 
-load
-====
+``load``
+========
 
 ::
 
    template <sycl::access::address_space addressSpace>
    void load(size_t offset, sycl::multi_ptr<const dataT, addressSpace> ptr);
 
-store
-=====
+``store``
+=========
 
 ::
 
@@ -194,7 +194,7 @@ Arithmetic operators
 ====================
 
 .. parsed-literal::
-   
+
   friend sycl::vec operator+(const sycl::vec &lhs, const sycl::vec &rhs);
   friend sycl::vec operator+(const sycl::vec &lhs, const dataT &rhs);
   friend sycl::vec operator+(const dataT &lhs, const sycl::vec &rhs);
@@ -211,7 +211,7 @@ Arithmetic operators
   friend sycl::vec operator/(const sycl::vec &lhs, const dataT &rhs);
   friend sycl::vec operator/(const dataT &lhs, const sycl::vec &rhs);
 
-  
+
   friend sycl::vec &operator+=(sycl::vec &lhs, const sycl::vec &rhs);
   friend sycl::vec &operator+=(sycl::vec &lhs, const dataT &rhs);
 
